@@ -49,15 +49,25 @@ class ListApp
             when 'r'
                 puts "Borrar un articulo, teclee indice"
                 indice = gets.chomp
-                @list.remove_item(indice.to_i)
+                item = @list.remove_item(indice.to_i)
+                30.times do
+                    print "*"
+                end
+                puts "\n #{item.text} ha sido eliminado"
             when 'm'
                 puts "Marcar un articulo, teclee indice"
                 indicemarcado = gets.chomp
-                @list.check_item(indicemarcado.to_i)
-           
+                item = @list.check_item(indicemarcado.to_i)
+                30.times do
+                    print "*"
+                end
+                puts "\n #{item.text} ha sido marcado"
             when 's'
                 break
-            end    
+            else
+                puts "Opcion no reconocida"
+            end
+            
             
         end
         puts "Gracias por utilizar nuestra aplicacion"
